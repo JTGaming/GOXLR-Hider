@@ -48,12 +48,12 @@ INT __stdcall WinMain(HINSTANCE, HINSTANCE,
 	system("taskkill /IM \"GOXLR App.exe\" /F");
 	Sleep(100);
 
-	//replace the currently loaded file with a saved profile that has all lighting turned off
+	//replace the currently loaded file with a saved profile
 	std::filesystem::remove(path_s + "\\GoXLR\\Profiles\\Custom.goxlr"); //Custom.goxlr is out main profile
-	std::filesystem::copy_file(path_s + "\\GoXLR\\Profiles\\Saved\\Custom.goxlr", path_s + "\\GoXLR\\Profiles\\Custom.goxlr"); //Saved-Custom.goxlr is the "dark mode" profile
+	std::filesystem::copy_file(path_s + "\\GoXLR\\Profiles\\Saved\\Custom.goxlr", path_s + "\\GoXLR\\Profiles\\Custom.goxlr"); //Saved-Custom.goxlr is the saved profile
 	Sleep(50);
 
-	//relaunch the app so it loads up our new "dark mode" profile
+	//relaunch the app so it loads up our new profile
 	startup("C:\\Program Files (x86)\\TC-Helicon\\GOXLR\\GoXLR App.exe");
 	
 	return 0;
